@@ -19,6 +19,7 @@
 #include "src/I2C.h"
 #include "src/adxl343.h"
 
+#include <stdio.h>
 #include <stdbool.h>
 /***************************************************************************//**
  * Initialize application.
@@ -43,9 +44,18 @@ void app_init(void)
 void app_process_action(void)
 {
 
+  bool ADXL_readRes = false;
+  uint8_t ADXL_accel_data[6];
+  int successfulReads = 0;
+
   if(ADXL_read_flag)
     {
-      struct device_id_request_res res = adxl_readDevID();
+      ADXL_readRes = adxl_readBWRate(ADXL_accel_data);
+      printf("Read result: %d",ADXL_readRes);
+      if(ADXL_readRes)
+        {
+          successfulReads++;
+        }
       ADXL_read_flag = false;
     }
 
