@@ -26,10 +26,13 @@ component:
 - {id: EFR32MG24B210F1536IM48}
 - {id: emlib_i2c}
 - {id: sl_system}
+- {id: iostream}
+- {id: brd4186c}
+- {id: iostream_usart_core}
 - {id: device_init}
 - {id: brd4002a}
-- {id: brd4186c}
 - {id: emlib_timer}
+- {id: uartdrv_core}
 define:
 - {name: DEBUG_EFM}
 ui_hints: {}

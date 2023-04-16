@@ -81,6 +81,11 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_assert.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.2.1/platform/emlib/inc/em_burtc.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_burtc.h</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.2.1/platform/emlib/inc/em_bus.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_bus.h</locationURI>
@@ -176,6 +181,11 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/sli_em_cmu.h</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.2.1/platform/emlib/src/em_burtc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_burtc.c</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.2.1/platform/emlib/src/em_cmu.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_cmu.c</locationURI>
@@ -219,6 +229,16 @@
 			<name>gecko_sdk_4.2.1/platform/emlib/src/em_timer.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_timer.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/peripheral/inc/peripheral_sysrtc.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/peripheral/inc/peripheral_sysrtc.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/peripheral/src/peripheral_sysrtc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/peripheral/src/peripheral_sysrtc.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.2.1/hardware/driver/configuration_over_swo/inc/sl_cos.h</name>
@@ -291,6 +311,26 @@
 			<locationURI>STUDIO_SDK_LOC/platform/driver/debug/src/sl_debug_swo.c</locationURI>
 		</link>
 		<link>
+			<name>gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/emdrv/uartdrv/inc/uartdrv.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/inc/uartdrv.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/emdrv/uartdrv/src/uartdrv.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/src/uartdrv.c</locationURI>
+		</link>
+		<link>
 			<name>gecko_sdk_4.2.1/platform/service/device_init/inc/sl_device_init_clocks.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/service/device_init/inc/sl_device_init_clocks.h</locationURI>
@@ -344,6 +384,41 @@
 			<name>gecko_sdk_4.2.1/platform/service/device_init/src/sl_device_init_nvic.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/service/device_init/src/sl_device_init_nvic.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/inc/sl_sleeptimer.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/inc/sl_sleeptimer.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/inc/sli_sleeptimer.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/inc/sli_sleeptimer.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/src/sl_sleeptimer.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/src/sl_sleeptimer.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/src/sl_sleeptimer_hal_burtc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/src/sl_sleeptimer_hal_burtc.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/src/sl_sleeptimer_hal_sysrtc.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/src/sl_sleeptimer_hal_sysrtc.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/src/sl_sleeptimer_hal_timer.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/src/sl_sleeptimer_hal_timer.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.2.1/platform/service/sleeptimer/src/sli_sleeptimer_hal.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/service/sleeptimer/src/sli_sleeptimer_hal.h</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.2.1/platform/service/system/inc/sl_system_init.h</name>
