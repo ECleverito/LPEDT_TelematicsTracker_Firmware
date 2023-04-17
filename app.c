@@ -19,6 +19,16 @@
 #include "src/I2C.h"
 #include "src/adxl343.h"
 
+#include "em_common.h"
+#include "sl_power_manager.h"
+#include "app.h"
+
+//#define APP_IS_OK_TO_SLEEP      (false)
+
+#define MY_USE_SYSTICKS 1
+#define INCLUDE_LOG_DEBUG 1
+#include "src/log.h"
+
 #include <stdio.h>
 #include <stdbool.h>
 /***************************************************************************//**
@@ -29,6 +39,8 @@ bool ADXL_read_flag;
 
 void app_init(void)
 {
+
+  sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
 
   init_LED0();
   init_timer0();
@@ -51,7 +63,7 @@ void app_process_action(void)
   if(ADXL_read_flag)
     {
       ADXL_readRes = adxl_readBWRate(ADXL_accel_data);
-      printf("Read result: %d",ADXL_readRes);
+      LOG_INFO("Read result: %d",ADXL_readRes);
       if(ADXL_readRes)
         {
           successfulReads++;

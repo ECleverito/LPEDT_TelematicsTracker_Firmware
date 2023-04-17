@@ -25,9 +25,13 @@ toolchain_settings: []
 component:
 - {id: EFR32MG24B210F1536IM48}
 - {id: emlib_i2c}
+- {id: power_manager}
+- {id: app_log}
 - {id: sl_system}
 - {id: iostream}
 - {id: brd4186c}
+- instance: [vcom]
+  id: iostream_usart
 - {id: iostream_usart_core}
 - {id: device_init}
 - {id: brd4002a}

@@ -68,6 +68,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\board\inc\sl_board_init.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_dcdc.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\hfxo_manager\inc\sl_hfxo_manager.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_hfxo.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_lfxo.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_clocks.h \
@@ -75,10 +76,28 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\board\inc\sl_board_control.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_handles.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_init_usart_instances.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\driver\debug\inc\sl_debug_swo.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_stdlib_config.h \
+ ../autogen/sl_iostream_init_usart_instances.h \
  ../autogen/sl_iostream_init_instances.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\driver\configuration_over_swo\inc\sl_cos.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 ../autogen/sl_event_handler.h:
@@ -149,6 +168,7 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\board\inc\sl_board_init.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_dcdc.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\hfxo_manager\inc\sl_hfxo_manager.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_hfxo.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_lfxo.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\sl_device_init_clocks.h:
@@ -156,8 +176,26 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\device_init\inc\
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\board\inc\sl_board_control.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_handles.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_init_usart_instances.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\driver\debug\inc\sl_debug_swo.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_stdlib_config.h:
+../autogen/sl_iostream_init_usart_instances.h:
 ../autogen/sl_iostream_init_instances.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\hardware\driver\configuration_over_swo\inc\sl_cos.h:

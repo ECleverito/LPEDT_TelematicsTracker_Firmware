@@ -62,7 +62,29 @@ app.o: ../app.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
- ../src/timers.h ../src/I2C.h ../src/adxl343.h
+ ../src/timers.h ../src/I2C.h ../src/adxl343.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ ../app.h ../src/log.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_handles.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_init_usart_instances.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 ../src/GPIO.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
@@ -129,3 +151,26 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
 ../src/timers.h:
 ../src/I2C.h:
 ../src/adxl343.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+../app.h:
+../src/log.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_handles.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_iostream_init_usart_instances.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h:

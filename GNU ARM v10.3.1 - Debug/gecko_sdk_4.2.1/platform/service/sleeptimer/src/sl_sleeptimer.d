@@ -63,7 +63,17 @@ gecko_sdk_4.2.1/platform/service/sleeptimer/src/sl_sleeptimer.o: \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
  C:/Users/erich/SimplicityStudio/SDKs/gecko_sdk/platform/service/sleeptimer/src/sli_sleeptimer_hal.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sli_sleeptimer.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_atomic.h
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_atomic.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sli_power_manager.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h:
@@ -128,3 +138,13 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
 C:/Users/erich/SimplicityStudio/SDKs/gecko_sdk/platform/service/sleeptimer/src/sli_sleeptimer_hal.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sli_sleeptimer.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_atomic.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sli_power_manager.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:

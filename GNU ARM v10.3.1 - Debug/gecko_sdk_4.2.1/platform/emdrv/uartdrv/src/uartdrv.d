@@ -3,6 +3,8 @@ gecko_sdk_4.2.1/platform/emdrv/uartdrv/src/uartdrv.o: \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\cmsis\core\include\core_cm33.h \
@@ -55,17 +57,23 @@ gecko_sdk_4.2.1/platform/emdrv/uartdrv/src/uartdrv.o: \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
@@ -75,15 +83,12 @@ gecko_sdk_4.2.1/platform/emdrv/uartdrv/src/uartdrv.o: \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\uartdrv\inc\uartdrv.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\cmsis\core\include\core_cm33.h:
@@ -136,17 +141,23 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
@@ -156,9 +167,4 @@ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/uartdrv_confi
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_sleeptimer_config.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
