@@ -40,11 +40,13 @@ bool ADXL_read_flag;
 void app_init(void)
 {
 
-  sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
+  //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
 
   init_LED0();
   init_timer0();
   init_I2C0();
+
+  adxl_init();
 
   ADXL_read_flag = false;
 
@@ -57,13 +59,37 @@ void app_process_action(void)
 {
 
   bool ADXL_readRes = false;
-  uint8_t ADXL_accel_data[6];
+  uint8_t ADXL_accelVals[6];
+  uint8_t pwrCtl;
+  uint8_t bwRate;
   int successfulReads = 0;
 
   if(ADXL_read_flag)
     {
-      ADXL_readRes = adxl_readBWRate(ADXL_accel_data);
-      LOG_INFO("Read result: %d",ADXL_readRes);
+      ADXL_readRes = adxl_read(DATAX0_REG,ADXL_accelVals,6);
+      if(ADXL_readRes)
+        {
+          LOG_INFO("ADXL343 measurements: \r\n");
+          LOG_INFO("\tX0 - %d\r\n",ADXL_accelVals[0]);
+          LOG_INFO("\tX1 - %d\r\n",ADXL_accelVals[1]);
+          LOG_INFO("\tY0 - %d\r\n",ADXL_accelVals[2]);
+          LOG_INFO("\tY1 - %d\r\n",ADXL_accelVals[3]);
+          LOG_INFO("\tZ0 - %d\r\n",ADXL_accelVals[4]);
+          LOG_INFO("\tZ1 - %d\r\n",ADXL_accelVals[5]);
+        }
+
+      ADXL_readRes = adxl_read(PWR_CTL_REG,&pwrCtl,1);
+      if(ADXL_readRes)
+        {
+          LOG_INFO("ADXL343 Power Ctl: %d\r\n",pwrCtl);
+        }
+
+      ADXL_readRes = adxl_read(BW_RATE_REG,&bwRate,1);
+      if(ADXL_readRes)
+        {
+          LOG_INFO("ADXL343 BW Rate: %d\r\n",bwRate);
+        }
+
       if(ADXL_readRes)
         {
           successfulReads++;
