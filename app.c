@@ -42,7 +42,6 @@ void app_init(void)
 
   //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
 
-  init_LED0();
   init_timer0();
   init_I2C0();
 

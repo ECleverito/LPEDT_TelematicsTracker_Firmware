@@ -5,12 +5,20 @@
  *      Author: erich
  */
 
+#pragma once
+
 #include "em_gpio.h"
 
-#define LED0_PORT gpioPortB
-#define LED0_PIN  2
-#define LED1_PORT gpioPortB
-#define LED1_PIN  4
+#define ACCEL_DATA_RDY_PORT gpioPortD
+#define ACCEL_DATA_RDY_PIN  2
 
-void init_LED0(void);
-void toggleLED0(void);
+#define SOS_BUTTON_PORT     gpioPortD
+#define SOS_BUTTON_PIN      3
+
+#define GPS_TX_RDY_PORT     gpioPortC
+#define GPS_TX_RDY_PIN      0
+
+#define GPS_PPS_LED_CTL_PORT  gpioPortC
+#define GPS_PPS_LED_CTL_PIN   3
+
+void init_GPIO();

@@ -7,16 +7,11 @@
 
 #include "src/GPIO.h"
 
-void init_LED0(void)
+void init_GPIO()
 {
+  GPIO_PinModeSet(ACCEL_DATA_RDY_PORT, ACCEL_DATA_RDY_PIN, gpioModeInput, 0);
+  GPIO_PinModeSet(GPS_TX_RDY_PORT, GPS_TX_RDY_PIN, gpioModeInput, 0);
+  GPIO_PinModeSet(SOS_BUTTON_PORT, SOS_BUTTON_PIN, gpioModeInput, 0);
 
-  GPIO_PinModeSet(LED0_PORT, LED0_PIN, gpioModePushPull, false);
-
+  GPIO_PinModeSet(GPS_PPS_LED_CTL_PORT, GPS_PPS_LED_CTL_PIN, gpioModeWiredAnd, 1);
 }
-
-void toggleLED0(void)
-{
-  GPIO_PinOutToggle(LED0_PORT,LED0_PIN);
-}
-
-
