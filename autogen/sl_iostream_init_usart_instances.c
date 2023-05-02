@@ -205,7 +205,9 @@ static void events_handler(sl_power_manager_em_t from,
   if (to < SL_POWER_MANAGER_EM2){
      
     // Enable next byte detection to wakeup from sleep on next byte
-    context_vcom.context.set_next_byte_detect(sl_iostream_vcom_handle->context, true);
+    if (sl_iostream_vcom_handle->context != NULL) {
+      context_vcom.context.set_next_byte_detect(sl_iostream_vcom_handle->context, true);
+    }
     
   }
 }

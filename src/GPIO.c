@@ -19,4 +19,14 @@ void toggleLED0(void)
   GPIO_PinOutToggle(LED0_PORT,LED0_PIN);
 }
 
+void init_PPS(void)
+{
 
+  GPIO_PinModeSet(PPS_PORT, PPS_PIN, gpioModePushPull, false);
+
+}
+
+void PPS_on(void)
+{
+  GPIO_PinOutClear(PPS_PORT,PPS_PIN);
+}

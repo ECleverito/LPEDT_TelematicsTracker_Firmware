@@ -13,16 +13,16 @@
 void init_I2C0()
 {
   // Using PA5 (SDA) and PA6 (SCL)
-  GPIO_PinModeSet(gpioPortC, 5, gpioModeWiredAndPullUpFilter, 1);
-  GPIO_PinModeSet(gpioPortC, 7, gpioModeWiredAndPullUpFilter, 1);
+  GPIO_PinModeSet(gpioPortA, 6, gpioModeWiredAndPullUpFilter, 1);
+  GPIO_PinModeSet(gpioPortA, 7, gpioModeWiredAndPullUpFilter, 1);
 
   // Route I2C pins to GPIO
   GPIO->I2CROUTE[0].SDAROUTE = (GPIO->I2CROUTE[0].SDAROUTE & ~_GPIO_I2C_SDAROUTE_MASK)
-                        | (gpioPortC << _GPIO_I2C_SDAROUTE_PORT_SHIFT
+                        | (gpioPortA << _GPIO_I2C_SDAROUTE_PORT_SHIFT
                         | (7 << _GPIO_I2C_SDAROUTE_PIN_SHIFT));
   GPIO->I2CROUTE[0].SCLROUTE = (GPIO->I2CROUTE[0].SCLROUTE & ~_GPIO_I2C_SCLROUTE_MASK)
-                        | (gpioPortC << _GPIO_I2C_SCLROUTE_PORT_SHIFT
-                        | (5 << _GPIO_I2C_SCLROUTE_PIN_SHIFT));
+                        | (gpioPortA << _GPIO_I2C_SCLROUTE_PORT_SHIFT
+                        | (6 << _GPIO_I2C_SCLROUTE_PIN_SHIFT));
   GPIO->I2CROUTE[0].ROUTEEN = GPIO_I2C_ROUTEEN_SDAPEN | GPIO_I2C_ROUTEEN_SCLPEN;
 
   CMU_ClockEnable(cmuClock_I2C0, true);
