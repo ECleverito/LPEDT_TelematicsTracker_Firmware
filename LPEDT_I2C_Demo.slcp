@@ -32,8 +32,13 @@ component:
 - {id: brd4186c}
 - instance: [vcom]
   id: iostream_usart
+- {id: device_init_emu}
+- {id: device_init_dcdc}
 - {id: iostream_usart_core}
-- {id: device_init}
+- {id: device_init_lfxo}
+- {id: device_init_hfxo}
+- {id: device_init_clocks}
+- {id: device_init_nvic}
 - {id: brd4002a}
 - {id: emlib_timer}
 - {id: uartdrv_core}

@@ -68,10 +68,6 @@
 // [PRS.SYNCH3]$
 
 // $[GPIO]
-// GPIO SWV on PA03
-#define GPIO_SWV_PORT                            gpioPortA
-#define GPIO_SWV_PIN                             3
-
 // [GPIO]$
 
 // $[TIMER0]
@@ -90,6 +86,14 @@
 // [TIMER4]$
 
 // $[USART0]
+// USART0 RX on PA05
+#define USART0_RX_PORT                           gpioPortA
+#define USART0_RX_PIN                            5
+
+// USART0 TX on PA04
+#define USART0_TX_PORT                           gpioPortA
+#define USART0_TX_PIN                            4
+
 // [USART0]$
 
 // $[I2C1]

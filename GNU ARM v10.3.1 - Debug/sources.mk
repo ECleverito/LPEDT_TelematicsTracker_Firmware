@@ -19,13 +19,9 @@ SUBDIRS := \
 . \
 autogen \
 gecko_sdk_4.2.1/app/common/util/app_log \
-gecko_sdk_4.2.1/hardware/board/src \
-gecko_sdk_4.2.1/hardware/driver/configuration_over_swo/src \
-gecko_sdk_4.2.1/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_eusart \
 gecko_sdk_4.2.1/platform/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.2.1/platform/common/src \
 gecko_sdk_4.2.1/platform/common/toolchain/src \
-gecko_sdk_4.2.1/platform/driver/debug/src \
 gecko_sdk_4.2.1/platform/emdrv/dmadrv/src \
 gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/src \
 gecko_sdk_4.2.1/platform/emdrv/uartdrv/src \
@@ -37,6 +33,5 @@ gecko_sdk_4.2.1/platform/service/iostream/src \
 gecko_sdk_4.2.1/platform/service/power_manager/src \
 gecko_sdk_4.2.1/platform/service/sleeptimer/src \
 gecko_sdk_4.2.1/platform/service/system/src \
-gecko_sdk_4.2.1/platform/service/udelay/src \
 src \
 
