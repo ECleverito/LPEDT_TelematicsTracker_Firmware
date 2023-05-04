@@ -18,6 +18,8 @@
 #include "src/timers.h"
 #include "src/I2C.h"
 #include "src/adxl343.h"
+#include "src/SPI.h"
+#include "src/XBee.h"
 
 #include "em_common.h"
 #include "sl_power_manager.h"
@@ -35,7 +37,7 @@
  * Initialize application.
  ******************************************************************************/
 
-bool ADXL_read_flag;
+bool sensor_read_flag;
 
 void app_init(void)
 {
@@ -45,10 +47,11 @@ void app_init(void)
   init_LED0();
   init_timer0();
   init_I2C0();
+  init_usart0();
 
   adxl_init();
 
-  ADXL_read_flag = false;
+  sensor_read_flag = false;
 
 }
 
@@ -62,9 +65,10 @@ void app_process_action(void)
   uint8_t ADXL_accelVals[6];
   uint8_t pwrCtl;
   uint8_t bwRate;
+  uint8_t fwVersion;
   int successfulReads = 0;
 
-  if(ADXL_read_flag)
+  if(sensor_read_flag)
     {
       ADXL_readRes = adxl_read(DATAX0_REG,ADXL_accelVals,6);
       if(ADXL_readRes)
@@ -94,7 +98,13 @@ void app_process_action(void)
         {
           successfulReads++;
         }
-      ADXL_read_flag = false;
+
+      if(queryXBeeFwVersion(&fwVersion))
+        {
+          LOG_INFO("XBee FW Version: %i", fwVersion);
+        }
+
+      sensor_read_flag = false;
     }
 
 }

@@ -4,6 +4,8 @@
  *  Created on: Mar 6, 2023
  *      Author: erich
  */
+#include "irq.h"
+
 #include <em_timer.h>
 #include <em_core.h>
 
@@ -21,7 +23,7 @@ void TIMER0_IRQHandler()
   TIMER_IntClear(TIMER0,flags);
 
   toggleLED0();
-  ADXL_read_flag = true;
+  sensor_read_flag = true;
 
   CORE_EXIT_CRITICAL();
 

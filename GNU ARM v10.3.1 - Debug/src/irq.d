@@ -1,5 +1,6 @@
 src/irq.o: ../src/irq.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
+ ../src/irq.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_timer.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h \
@@ -66,6 +67,7 @@ src/irq.o: ../src/irq.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/adxl343.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
+../src/irq.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_timer.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h:

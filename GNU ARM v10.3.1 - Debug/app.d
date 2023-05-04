@@ -62,7 +62,9 @@ app.o: ../app.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
- ../src/timers.h ../src/I2C.h ../src/adxl343.h \
+ ../src/timers.h ../src/I2C.h ../src/adxl343.h ../src/SPI.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h \
+ ../src/XBee.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h \
@@ -151,6 +153,9 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
 ../src/timers.h:
 ../src/I2C.h:
 ../src/adxl343.h:
+../src/SPI.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_usart.h:
+../src/XBee.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/sl_power_manager_config.h:

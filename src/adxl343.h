@@ -58,6 +58,4 @@ bool adxl_read(uint8_t regAddr, uint8_t *data, uint8_t len);
 
 bool adxl_write(uint8_t regAddr, uint8_t *data);
 
-extern bool ADXL_read_flag;
-
 #endif /* SRC_ADXL343_H_ */
