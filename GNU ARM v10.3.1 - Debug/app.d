@@ -62,7 +62,7 @@ app.o: ../app.c \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/emlib_core_debug_config.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
- ../src/timers.h ../src/I2C.h ../src/adxl343.h \
+ ../src/timers.h ../src/I2C.h ../src/adxl343.h ../src/sam-m8q.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
  C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h \
@@ -151,6 +151,7 @@ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
 ../src/timers.h:
 ../src/I2C.h:
 ../src/adxl343.h:
+../src/sam-m8q.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
 C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h:

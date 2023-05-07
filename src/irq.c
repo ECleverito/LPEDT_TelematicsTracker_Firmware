@@ -9,6 +9,7 @@
 
 #include "src/GPIO.h"
 #include "src/adxl343.h"
+#include "src/sam-m8q.h"
 
 void TIMER0_IRQHandler()
 {
@@ -20,8 +21,8 @@ void TIMER0_IRQHandler()
 
   TIMER_IntClear(TIMER0,flags);
 
-  toggleLED0();
-  ADXL_read_flag = true;
+  //ADXL_read_flag = true;
+  gps_read_flag_set(true);
 
   CORE_EXIT_CRITICAL();
 

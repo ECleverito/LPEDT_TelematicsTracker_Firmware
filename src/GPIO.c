@@ -7,18 +7,6 @@
 
 #include "src/GPIO.h"
 
-void init_LED0(void)
-{
-
-  GPIO_PinModeSet(LED0_PORT, LED0_PIN, gpioModePushPull, false);
-
-}
-
-void toggleLED0(void)
-{
-  GPIO_PinOutToggle(LED0_PORT,LED0_PIN);
-}
-
 void init_PPS(void)
 {
 
