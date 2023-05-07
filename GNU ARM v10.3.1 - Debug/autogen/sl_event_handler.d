@@ -91,7 +91,6 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_stdlib_config.h \
  ../autogen/sl_iostream_init_usart_instances.h \
  ../autogen/sl_iostream_init_instances.h
@@ -187,7 +186,6 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/dmadrv_config.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/app_log_config.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emdrv\gpiointerrupt\inc\gpiointerrupt.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_stdlib_config.h:
 ../autogen/sl_iostream_init_usart_instances.h:
 ../autogen/sl_iostream_init_instances.h:

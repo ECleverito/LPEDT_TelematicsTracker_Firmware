@@ -61,7 +61,11 @@ src/GPIO.o: ../src/GPIO.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\sli_em_cmu.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/GPIO.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
@@ -125,3 +129,7 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\sli_em_cmu.h:

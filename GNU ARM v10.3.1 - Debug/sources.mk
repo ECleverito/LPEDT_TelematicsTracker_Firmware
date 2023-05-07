@@ -23,8 +23,6 @@ gecko_sdk_4.2.1/platform/Device/SiliconLabs/EFR32MG24/Source \
 gecko_sdk_4.2.1/platform/common/src \
 gecko_sdk_4.2.1/platform/common/toolchain/src \
 gecko_sdk_4.2.1/platform/emdrv/dmadrv/src \
-gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/src \
-gecko_sdk_4.2.1/platform/emdrv/uartdrv/src \
 gecko_sdk_4.2.1/platform/emlib/src \
 gecko_sdk_4.2.1/platform/peripheral/src \
 gecko_sdk_4.2.1/platform/service/device_init/src \

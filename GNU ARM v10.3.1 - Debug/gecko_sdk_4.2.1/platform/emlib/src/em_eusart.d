@@ -1,5 +1,5 @@
 gecko_sdk_4.2.1/platform/emlib/src/em_eusart.o: \
- C:/Users/erich/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_eusart.c \
+ ../gecko_sdk_4.2.1/platform/emlib/src/em_eusart.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \

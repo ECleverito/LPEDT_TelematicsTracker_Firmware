@@ -32,8 +32,8 @@ component:
 - {id: brd4186c}
 - instance: [vcom]
   id: iostream_usart
-- {id: device_init_emu}
 - {id: device_init_dcdc}
+- {id: device_init_emu}
 - {id: iostream_usart_core}
 - {id: device_init_lfxo}
 - {id: device_init_hfxo}
@@ -41,7 +41,6 @@ component:
 - {id: device_init_nvic}
 - {id: brd4002a}
 - {id: emlib_timer}
-- {id: uartdrv_core}
 define:
 - {name: DEBUG_EFM}
 ui_hints: {}

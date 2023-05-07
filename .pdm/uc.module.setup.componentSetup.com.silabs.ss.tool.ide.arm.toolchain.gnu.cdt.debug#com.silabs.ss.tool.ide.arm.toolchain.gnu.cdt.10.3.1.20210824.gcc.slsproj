@@ -195,22 +195,6 @@
             <file name="ecode.h" uri="studio:/sdk/platform/emdrv/common/inc/ecode.h"/>
           </folder>
         </folder>
-        <folder name="gpiointerrupt">
-          <folder name="src">
-            <file name="gpiointerrupt.c" uri="studio:/sdk/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c"/>
-          </folder>
-          <folder name="inc">
-            <file name="gpiointerrupt.h" uri="studio:/sdk/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h"/>
-          </folder>
-        </folder>
-        <folder name="uartdrv">
-          <folder name="src">
-            <file name="uartdrv.c" uri="studio:/sdk/platform/emdrv/uartdrv/src/uartdrv.c"/>
-          </folder>
-          <folder name="inc">
-            <file name="uartdrv.h" uri="studio:/sdk/platform/emdrv/uartdrv/inc/uartdrv.h"/>
-          </folder>
-        </folder>
       </folder>
       <folder name="emlib">
         <folder name="src">
@@ -218,7 +202,6 @@
           <file name="em_cmu.c" uri="studio:/sdk/platform/emlib/src/em_cmu.c"/>
           <file name="em_core.c" uri="studio:/sdk/platform/emlib/src/em_core.c"/>
           <file name="em_emu.c" uri="studio:/sdk/platform/emlib/src/em_emu.c"/>
-          <file name="em_eusart.c" uri="studio:/sdk/platform/emlib/src/em_eusart.c"/>
           <file name="em_gpio.c" uri="studio:/sdk/platform/emlib/src/em_gpio.c"/>
           <file name="em_i2c.c" uri="studio:/sdk/platform/emlib/src/em_i2c.c"/>
           <file name="em_ldma.c" uri="studio:/sdk/platform/emlib/src/em_ldma.c"/>
@@ -240,8 +223,6 @@
           <file name="em_version.h" uri="studio:/sdk/platform/emlib/inc/em_version.h"/>
           <file name="em_core.h" uri="studio:/sdk/platform/emlib/inc/em_core.h"/>
           <file name="em_emu.h" uri="studio:/sdk/platform/emlib/inc/em_emu.h"/>
-          <file name="em_eusart.h" uri="studio:/sdk/platform/emlib/inc/em_eusart.h"/>
-          <file name="em_eusart_compat.h" uri="studio:/sdk/platform/emlib/inc/em_eusart_compat.h"/>
           <file name="em_gpio.h" uri="studio:/sdk/platform/emlib/inc/em_gpio.h"/>
           <file name="em_i2c.h" uri="studio:/sdk/platform/emlib/inc/em_i2c.h"/>
           <file name="em_ldma.h" uri="studio:/sdk/platform/emlib/inc/em_ldma.h"/>
@@ -286,7 +267,6 @@
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/common/inc"/>
   <includePath uri="studio:/sdk/platform/emlib/inc"/>
-  <includePath uri="studio:/sdk/platform/emdrv/gpiointerrupt/inc"/>
   <includePath uri="studio:/sdk/platform/service/hfxo_manager/inc"/>
   <includePath uri="studio:/sdk/platform/service/iostream/inc"/>
   <includePath uri="studio:/sdk/platform/peripheral/inc"/>
@@ -294,7 +274,6 @@
   <includePath uri="studio:/sdk/platform/common/toolchain/inc"/>
   <includePath uri="studio:/sdk/platform/service/system/inc"/>
   <includePath uri="studio:/sdk/platform/service/sleeptimer/inc"/>
-  <includePath uri="studio:/sdk/platform/emdrv/uartdrv/inc"/>
   <macroDefinition name="DEBUG_EFM"/>
   <macroDefinition name="EFR32MG24B210F1536IM48"/>
   <macroDefinition name="SL_BOARD_NAME" value="&quot;BRD4186C&quot;"/>

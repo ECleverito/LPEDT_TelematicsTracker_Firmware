@@ -24,7 +24,12 @@
 #define THRESH_ACT_REG    		0x24
 #define THRESH_NACT_REG   		0x25
 #define TIME_NACT_REG     		0x26
-#define NACT_CTL_REG      		0x27
+
+#define ACT_CTL_REG      		  0x27
+#define X_ACT_ENABLE          0x40
+#define Y_ACT_ENABLE          0x20
+#define Z_ACT_ENABLE          0x10
+
 #define THRESH_FF_REG     		0x28
 #define TIME_FF_REG       		0x29
 #define TAP_AXES_REG      		0x2A
@@ -40,6 +45,8 @@
 #define PWR_CTL_WAKEUP_BIT0   0x01
 
 #define INT_ENABLE_REG   		  0x2E
+#define ACT_INT_ENABLE        0x10
+
 #define INT_MAP_REG      		  0x2F
 #define INT_SRC_REG      		  0x30
 #define DATA_FMT_REG     		  0x31
@@ -52,7 +59,11 @@
 #define FIFO_CTL_REG   				0x38
 #define FIFO_STAT_REG    		  0x39
 
+#define ONE_GRAV              16
+
 void adxl_init();
+
+void adxl_config();
 
 bool adxl_read(uint8_t regAddr, uint8_t *data, uint8_t len);
 

@@ -21,4 +21,6 @@
 #define GPS_PPS_LED_CTL_PORT  gpioPortC
 #define GPS_PPS_LED_CTL_PIN   3
 
+extern bool accel_event;
+
 void init_GPIO();

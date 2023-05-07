@@ -116,16 +116,6 @@
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_emu.h</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.2.1/platform/emlib/inc/em_eusart.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_eusart.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emlib/inc/em_eusart_compat.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_eusart_compat.h</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_4.2.1/platform/emlib/inc/em_gpio.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/inc/em_gpio.h</locationURI>
@@ -199,11 +189,6 @@
 			<name>gecko_sdk_4.2.1/platform/emlib/src/em_emu.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_emu.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emlib/src/em_eusart.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_eusart.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.2.1/platform/emlib/src/em_gpio.c</name>
@@ -289,26 +274,6 @@
 			<name>gecko_sdk_4.2.1/platform/common/toolchain/src/sl_memory.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/common/toolchain/src/sl_memory.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emdrv/gpiointerrupt/src/gpiointerrupt.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emdrv/uartdrv/inc/uartdrv.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/inc/uartdrv.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.2.1/platform/emdrv/uartdrv/src/uartdrv.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/emdrv/uartdrv/src/uartdrv.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.2.1/platform/service/device_init/inc/sl_device_init_clocks.h</name>

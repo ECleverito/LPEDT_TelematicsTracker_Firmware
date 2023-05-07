@@ -15,6 +15,19 @@ void adxl_init()
   adxl_write(PWR_CTL_REG,&measureModeVal);
 }
 
+void adxl_config()
+{
+  uint8_t registerVal = ONE_GRAV;
+  //Configure activity threshold for 1 G
+  adxl_write(THRESH_ACT_REG, &registerVal);
+  //Configure X & Y axes for activity interrupts
+  registerVal = X_ACT_ENABLE | Y_ACT_ENABLE;
+  adxl_write(ACT_CTL_REG, &registerVal);
+  //Enable "activity" interrupt
+  registerVal = ACT_INT_ENABLE;
+  adxl_write(INT_ENABLE_REG, &registerVal);
+}
+
 bool adxl_read(uint8_t regAddr, uint8_t *data, uint8_t len)
 {
   bool result = false;

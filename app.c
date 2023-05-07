@@ -35,17 +35,27 @@
  * Initialize application.
  ******************************************************************************/
 
+bool accel_event;
 bool ADXL_read_flag;
 
 void app_init(void)
 {
 
-  //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
+  sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
 
   init_timer0();
   init_I2C0();
 
+  accel_event = false;
+  init_GPIO();
+
+  //Configure accelerometer before taking out of standby
+  adxl_config();
   adxl_init();
+
+  uint8_t intSrcRegInitial;
+  //Clear any initial ADXL interrupt flags
+  adxl_read(INT_SRC_REG,&intSrcRegInitial,1);
 
   ADXL_read_flag = false;
 
@@ -61,7 +71,7 @@ void app_process_action(void)
   uint8_t ADXL_accelVals[6];
   uint8_t pwrCtl;
   uint8_t bwRate;
-  int successfulReads = 0;
+  uint8_t intSrc;
 
   if(ADXL_read_flag)
     {
@@ -89,11 +99,17 @@ void app_process_action(void)
           LOG_INFO("ADXL343 BW Rate: %d\r\n",bwRate);
         }
 
-      if(ADXL_readRes)
-        {
-          successfulReads++;
-        }
       ADXL_read_flag = false;
+    }
+
+  if(accel_event)
+    {
+      accel_event = false;
+
+      adxl_read(INT_SRC_REG,&intSrc,1);
+
+      LOG_INFO("Acceleration event detected!\r\n");
+
     }
 
 }

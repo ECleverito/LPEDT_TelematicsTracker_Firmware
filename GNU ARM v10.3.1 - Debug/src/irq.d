@@ -55,15 +55,15 @@ src/irq.o: ../src/irq.c \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h \
- C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/GPIO.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
- c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
  c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
+ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/GPIO.h \
  C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/adxl343.h
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_timer.h:
@@ -121,13 +121,13 @@ c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\autogen/sl_component_catalog.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo\config/emlib_core_debug_config.h:
-C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/GPIO.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
-c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
 c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
+c:\users\erich\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/GPIO.h:
 C:\Users\erich\SimplicityStudio\v5_workspace\LPEDT_I2C_Demo/src/adxl343.h:

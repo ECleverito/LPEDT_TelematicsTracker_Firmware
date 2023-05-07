@@ -5,6 +5,7 @@
  *      Author: erich
  */
 #include <em_timer.h>
+#include <em_gpio.h>
 #include <em_core.h>
 
 #include "src/GPIO.h"
@@ -24,5 +25,21 @@ void TIMER0_IRQHandler()
 
   CORE_EXIT_CRITICAL();
 
+
+}
+
+void GPIO_EVEN_IRQHandler(void)
+{
+  CORE_DECLARE_IRQ_STATE;
+
+  CORE_ENTER_CRITICAL();
+
+  uint32_t flags=GPIO_IntGet();
+
+  GPIO_IntClear(flags);
+
+  accel_event = true;
+
+  CORE_EXIT_CRITICAL();
 
 }
