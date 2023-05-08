@@ -36,6 +36,7 @@
  ******************************************************************************/
 
 bool accel_event;
+bool sos_event;
 bool ADXL_read_flag;
 
 void app_init(void)
@@ -46,7 +47,9 @@ void app_init(void)
   init_timer0();
   init_I2C0();
 
+  //GPIO interrupt initialization
   accel_event = false;
+  sos_event = false;
   init_GPIO();
 
   //Configure accelerometer before taking out of standby
@@ -75,9 +78,6 @@ void app_process_action(void)
 
       LOG_INFO("Acceleration event detected!\r\n");
 
-      //Wait 1.5 s for FIFO to fill
-//      sl_udelay_wait(1500000);
-
       switch(adxl_getAccelEvent())
       {
         case NONE:
@@ -94,6 +94,13 @@ void app_process_action(void)
           break;
       }
 
+    }
+
+  if(sos_event)
+    {
+      sos_event = false;
+
+      LOG_INFO("SOS event!\r\n");
     }
 
 }

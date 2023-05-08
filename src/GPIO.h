@@ -22,5 +22,6 @@
 #define GPS_PPS_LED_CTL_PIN   3
 
 extern bool accel_event;
+extern bool sos_event;
 
 void init_GPIO();

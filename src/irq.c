@@ -43,3 +43,19 @@ void GPIO_EVEN_IRQHandler(void)
   CORE_EXIT_CRITICAL();
 
 }
+
+void GPIO_ODD_IRQHandler(void)
+{
+  CORE_DECLARE_IRQ_STATE;
+
+  CORE_ENTER_CRITICAL();
+
+  uint32_t flags=GPIO_IntGet();
+
+  GPIO_IntClear(flags);
+
+  sos_event = true;
+
+  CORE_EXIT_CRITICAL();
+
+}
