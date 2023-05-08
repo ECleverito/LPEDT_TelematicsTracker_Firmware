@@ -31,5 +31,6 @@ gecko_sdk_4.2.1/platform/service/iostream/src \
 gecko_sdk_4.2.1/platform/service/power_manager/src \
 gecko_sdk_4.2.1/platform/service/sleeptimer/src \
 gecko_sdk_4.2.1/platform/service/system/src \
+gecko_sdk_4.2.1/platform/service/udelay/src \
 src \
 

@@ -29,7 +29,7 @@ void adxl_config()
   registerVal = FULL_RES_16_BIT | EIGHT_G_RANGE;
   adxl_write(DATA_FMT_REG, &registerVal);
 
-  registerVal = ONE_GRAV_THRESH;
+  registerVal = HALF_G_THRESH;
   //Configure activity threshold for 1 G
   adxl_write(THRESH_ACT_REG, &registerVal);
 
@@ -40,6 +40,10 @@ void adxl_config()
   //Enable "activity" interrupt
   registerVal = ACT_INT_ENABLE;
   adxl_write(INT_ENABLE_REG, &registerVal);
+
+  //Put FIFO into trigger mode with 16 presamples
+  registerVal = TRIGGER_FIFO_MODE | THIRTYONE_PRESAMPS;
+  adxl_write(FIFO_CTL_REG, &registerVal);
 
   //Offset acceleration vectors with calibration results
   int8_t offsetVal = X_OFFSET;
@@ -210,7 +214,7 @@ void adxl_offset_calibration()
 
 }
 
-void adxl_getAccelVals(int16_t *xyzAccel)
+void adxl_getAccelVals(accel_vector_t *accel_vector)
 {
   //Read acceleration values
   uint8_t accelRegVals[6];
@@ -218,12 +222,61 @@ void adxl_getAccelVals(int16_t *xyzAccel)
   adxl_read(DATAX0_REG, accelRegVals, 6);
 
   //Parse x-direction
-  xyzAccel[0] = accelRegVals[0];
-  xyzAccel[0] |= ((uint16_t)accelRegVals[1])<<8;
+  accel_vector->x_accel = accelRegVals[0];
+  accel_vector->x_accel |= ((uint16_t)accelRegVals[1])<<8;
   //Parse y-direction
-  xyzAccel[1] = accelRegVals[2];
-  xyzAccel[1] |= ((uint16_t)accelRegVals[3])<<8;
+  accel_vector->y_accel = accelRegVals[2];
+  accel_vector->y_accel |= ((uint16_t)accelRegVals[3])<<8;
   //Parse z-direction
-  xyzAccel[2] = accelRegVals[4];
-  xyzAccel[2] |= ((uint16_t)accelRegVals[5])<<8;
+  accel_vector->z_accel = accelRegVals[4];
+  accel_vector->z_accel |= ((uint16_t)accelRegVals[5])<<8;
+}
+
+enum accel_event_t adxl_getAccelEvent()
+{
+  enum accel_event_t lastEvt = NONE;
+
+  accel_vector_t accel_vecs_FIFO;
+
+  for(int i=0;i<FIFO_SIZE;i++)
+    {
+      adxl_getAccelVals(&accel_vecs_FIFO);
+
+      if(abs(accel_vecs_FIFO.x_accel) >= ONE_G_EVT || \
+         abs(accel_vecs_FIFO.y_accel) >= ONE_G_EVT || \
+         abs(accel_vecs_FIFO.z_accel) >= ONE_G_EVT)
+        {
+          return CRASH;
+        }
+
+
+      if(abs(accel_vecs_FIFO.y_accel) >= HALF_G_EVT)
+        {
+          if(lastEvt==HARD_BRAKE)
+            {
+              return CRASH;
+            }
+          if(abs(accel_vecs_FIFO.x_accel) >= HALF_G_EVT)
+            {
+              return CRASH;
+            }
+          lastEvt=HARD_TURN;
+        }
+
+      if(abs(accel_vecs_FIFO.x_accel) >= HALF_G_EVT)
+        {
+          if(lastEvt==HARD_TURN)
+            {
+              return CRASH;
+            }
+          if(abs(accel_vecs_FIFO.y_accel) >= HALF_G_EVT)
+            {
+              return CRASH;
+            }
+          lastEvt=HARD_BRAKE;
+        }
+
+    }
+
+  return lastEvt;
 }

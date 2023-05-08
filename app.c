@@ -58,8 +58,6 @@ void app_init(void)
   //Clear any initial ADXL interrupt flags
   adxl_read(INT_SRC_REG,&intSrcRegInitial,1);
 
-  ADXL_read_flag = false;
-
 }
 
 /***************************************************************************//**
@@ -68,28 +66,33 @@ void app_init(void)
 void app_process_action(void)
 {
 
-  int16_t ADXL_accelVals[3];
-
   uint8_t intSrc;
-
-  if(ADXL_read_flag)
-    {
-      adxl_getAccelVals(ADXL_accelVals);
-
-      LOG_INFO("X acceleration = %i milli-Gs\r\n", ADXL_accelVals[0]*4);
-      LOG_INFO("Y acceleration = %i milli-Gs\r\n", ADXL_accelVals[1]*4);
-      LOG_INFO("Z acceleration = %i milli-Gs\r\n", ADXL_accelVals[2]*4);
-
-      ADXL_read_flag = false;
-    }
 
   if(accel_event)
     {
       accel_event = false;
-
-      adxl_read(INT_SRC_REG,&intSrc,1);
+      adxl_read(INT_SRC_REG, &intSrc, 1);
 
       LOG_INFO("Acceleration event detected!\r\n");
+
+      //Wait 1.5 s for FIFO to fill
+//      sl_udelay_wait(1500000);
+
+      switch(adxl_getAccelEvent())
+      {
+        case NONE:
+          LOG_INFO("No event detected.\r\n");
+          break;
+        case HARD_BRAKE:
+          LOG_INFO("Hard braking detected!\r\n");
+          break;
+        case HARD_TURN:
+          LOG_INFO("Hard turning detected!\r\n");
+          break;
+        case CRASH:
+          LOG_INFO("Crash detected!\r\n");
+          break;
+      }
 
     }
 

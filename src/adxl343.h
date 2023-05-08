@@ -13,6 +13,8 @@
 
 #define ADXL_ADDR   0xA6
 
+#define FIFO_SIZE   32
+
 #define DEVID_REG  		 				0x00
 #define THRESH_TAP_REG 				0x1D
 #define OFSX_REG          		0x1E
@@ -23,15 +25,22 @@
 #define TAP_WIN_REG       		0x23
 
 #define THRESH_ACT_REG    		0x24
-#define ONE_GRAV_THRESH       16
+#define ONE_G_THRESH          16
+#define HALF_G_THRESH         8
 
 #define THRESH_NACT_REG   		0x25
+#define EIGHTH_G_THRESH       2
+
 #define TIME_NACT_REG     		0x26
+#define TIME_NACT_MAX_4_MIN   0xFF
 
 #define ACT_CTL_REG      		  0x27
 #define X_ACT_ENABLE          0x40
 #define Y_ACT_ENABLE          0x20
 #define Z_ACT_ENABLE          0x10
+#define X_NACT_ENABLE         0x04
+#define Y_NACT_ENABLE         0x02
+#define Z_NACT_ENABLE         0x01
 
 #define THRESH_FF_REG     		0x28
 #define TIME_FF_REG       		0x29
@@ -60,6 +69,8 @@
 #define DATA_FMT_REG     		  0x31
 #define FULL_RES_16_BIT       0x08
 #define EIGHT_G_RANGE         0x02
+#define ONE_G_EVT             250
+#define HALF_G_EVT            125
 
 //Data in these registers is 4 mg/LSB
 //and two's complement (signed)
@@ -75,6 +86,7 @@
 #define INT1_TRIGGER          0
 #define INT2_TRIGGER          0x20
 #define SIXTEEN_PRESAMPS      0x10
+#define THIRTYONE_PRESAMPS    0x1F
 #define BYPASS_FIFO_MODE      0
 
 #define FIFO_STAT_REG    		  0x39
@@ -98,7 +110,24 @@ bool adxl_write(uint8_t regAddr, uint8_t *data);
 
 void adxl_offset_calibration();
 
-void adxl_getAccelVals(int16_t *xyzAccel);
+typedef struct accel_vector_s
+{
+  int16_t x_accel;
+  int16_t y_accel;
+  int16_t z_accel;
+}accel_vector_t;
+
+void adxl_getAccelVals(accel_vector_t *accel_vector);
+
+enum accel_event_t
+{
+  NONE,
+  HARD_BRAKE,
+  HARD_TURN,
+  CRASH
+};
+
+enum accel_event_t adxl_getAccelEvent();
 
 extern bool ADXL_read_flag;
 

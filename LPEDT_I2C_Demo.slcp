@@ -41,6 +41,7 @@ component:
 - {id: device_init_nvic}
 - {id: brd4002a}
 - {id: emlib_timer}
+- {id: udelay}
 define:
 - {name: DEBUG_EFM}
 ui_hints: {}
