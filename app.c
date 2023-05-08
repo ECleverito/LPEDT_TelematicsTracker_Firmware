@@ -52,6 +52,7 @@ void app_init(void)
   //Configure accelerometer before taking out of standby
   adxl_config();
   adxl_init();
+//  adxl_offset_calibration();
 
   uint8_t intSrcRegInitial;
   //Clear any initial ADXL interrupt flags
@@ -67,37 +68,17 @@ void app_init(void)
 void app_process_action(void)
 {
 
-  bool ADXL_readRes = false;
-  uint8_t ADXL_accelVals[6];
-  uint8_t pwrCtl;
-  uint8_t bwRate;
+  int16_t ADXL_accelVals[3];
+
   uint8_t intSrc;
 
   if(ADXL_read_flag)
     {
-      ADXL_readRes = adxl_read(DATAX0_REG,ADXL_accelVals,6);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 measurements: \r\n");
-          LOG_INFO("\tX0 - %d\r\n",ADXL_accelVals[0]);
-          LOG_INFO("\tX1 - %d\r\n",ADXL_accelVals[1]);
-          LOG_INFO("\tY0 - %d\r\n",ADXL_accelVals[2]);
-          LOG_INFO("\tY1 - %d\r\n",ADXL_accelVals[3]);
-          LOG_INFO("\tZ0 - %d\r\n",ADXL_accelVals[4]);
-          LOG_INFO("\tZ1 - %d\r\n",ADXL_accelVals[5]);
-        }
+      adxl_getAccelVals(ADXL_accelVals);
 
-      ADXL_readRes = adxl_read(PWR_CTL_REG,&pwrCtl,1);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 Power Ctl: %d\r\n",pwrCtl);
-        }
-
-      ADXL_readRes = adxl_read(BW_RATE_REG,&bwRate,1);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 BW Rate: %d\r\n",bwRate);
-        }
+      LOG_INFO("X acceleration = %i milli-Gs\r\n", ADXL_accelVals[0]*4);
+      LOG_INFO("Y acceleration = %i milli-Gs\r\n", ADXL_accelVals[1]*4);
+      LOG_INFO("Z acceleration = %i milli-Gs\r\n", ADXL_accelVals[2]*4);
 
       ADXL_read_flag = false;
     }
