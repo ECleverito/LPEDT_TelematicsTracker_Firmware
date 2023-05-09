@@ -91,12 +91,45 @@ void app_process_action(void)
       //Clear interrupt flag on ADXL
       adxl_read(INT_SRC_REG,&intSrc,1);
 
-      adxl_getAccelEvent();
+      accel_vector_t accelEventData;
+
+      switch(adxl_getAccelEvent(&accelEventData))
+      {
+        case HARD_BRAKE:
+          sl_iostream_printf(app_log_iostream,\
+            "POST /accel?x_accel=%.3f&y_accel=%.3f&event_=%s HTTP/1.1\r\nHost: "
+            "teletracker.herokuapp.com\r\n\r\n",\
+            (float)accelEventData.x_accel/(float)ONE_G_EVT,\
+            (float)accelEventData.y_accel/(float)ONE_G_EVT,\
+            "Hard Braking");
+          break;
+        case HARD_TURN:
+          sl_iostream_printf(app_log_iostream,\
+            "POST /accel?x_accel=%.3f&y_accel=%.3f&event_=%s HTTP/1.1\r\nHost: "
+            "teletracker.herokuapp.com\r\n\r\n",\
+            (float)accelEventData.x_accel/(float)ONE_G_EVT,\
+            (float)accelEventData.y_accel/(float)ONE_G_EVT,\
+            "Hard Turning");
+          break;
+        case CRASH:
+          sl_iostream_printf(app_log_iostream,\
+            "POST /accel?x_accel=%.3f&y_accel=%.3f&event_=%s HTTP/1.1\r\nHost: "
+            "teletracker.herokuapp.com\r\n\r\n",\
+            (float)accelEventData.x_accel/(float)ONE_G_EVT,\
+            (float)accelEventData.y_accel/(float)ONE_G_EVT,\
+            "Crash!");
+          break;
+        case NONE:
+          break;
+      }
     }
 
   if(sos_event)
     {
       sos_event=false;
+      sl_iostream_printf(app_log_iostream,\
+        "POST /sos?event_=%s HTTP/1.1\r\nHost: teletracker.herokuapp.com\r\n\r\n",\
+        "Emergency button press!");
     }
 
   gps_return_t GPS_readRes;

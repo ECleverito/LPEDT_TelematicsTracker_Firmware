@@ -232,8 +232,9 @@ void adxl_getAccelVals(accel_vector_t *accel_vector)
   accel_vector->z_accel |= ((uint16_t)accelRegVals[5])<<8;
 }
 
-enum accel_event_t adxl_getAccelEvent()
+enum accel_event_t adxl_getAccelEvent(accel_vector_t *accelEventData)
 {
+  memset(accelEventData,0,sizeof(accelEventData));
   enum accel_event_t lastEvt = NONE;
 
   accel_vector_t accel_vecs_FIFO;
@@ -246,12 +247,16 @@ enum accel_event_t adxl_getAccelEvent()
          abs(accel_vecs_FIFO.y_accel) >= ONE_G_EVT || \
          abs(accel_vecs_FIFO.z_accel) >= ONE_G_EVT)
         {
+          accelEventData->x_accel=accel_vecs_FIFO.x_accel;
+          accelEventData->y_accel=accel_vecs_FIFO.y_accel;
+          accelEventData->z_accel=accel_vecs_FIFO.z_accel;
           return CRASH;
         }
 
 
       if(abs(accel_vecs_FIFO.y_accel) >= HALF_G_EVT)
         {
+          accelEventData->y_accel = accel_vecs_FIFO.y_accel;
           if(lastEvt==HARD_BRAKE)
             {
               return CRASH;
@@ -265,6 +270,7 @@ enum accel_event_t adxl_getAccelEvent()
 
       if(abs(accel_vecs_FIFO.x_accel) >= HALF_G_EVT)
         {
+          accelEventData->x_accel = accel_vecs_FIFO.x_accel;
           if(lastEvt==HARD_TURN)
             {
               return CRASH;

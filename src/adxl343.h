@@ -127,7 +127,7 @@ enum accel_event_t
   CRASH
 };
 
-enum accel_event_t adxl_getAccelEvent();
+enum accel_event_t adxl_getAccelEvent(accel_vector_t *accelEventData);
 
 extern bool ADXL_read_flag;
 
