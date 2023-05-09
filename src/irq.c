@@ -39,34 +39,7 @@ void sos_event_callback()
   sos_event = true;
 }
 
-//void GPIO_EVEN_IRQHandler(void)
-//{
-//  CORE_DECLARE_IRQ_STATE;
-//
-//  CORE_ENTER_CRITICAL();
-//
-//  uint32_t flags=GPIO_IntGet();
-//
-//  GPIO_IntClear(flags);
-//
-//
-//
-//  CORE_EXIT_CRITICAL();
-//
-//}
-//
-//void GPIO_ODD_IRQHandler(void)
-//{
-//  CORE_DECLARE_IRQ_STATE;
-//
-//  CORE_ENTER_CRITICAL();
-//
-//  uint32_t flags=GPIO_IntGet();
-//
-//  GPIO_IntClear(flags);
-//
-//  sos_event = true;
-//
-//  CORE_EXIT_CRITICAL();
-//
-//}
+void GPS_TX_RDY_event_callback()
+{
+  GPS_data_ready = true;
+}

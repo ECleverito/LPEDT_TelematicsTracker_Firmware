@@ -23,6 +23,7 @@
 
 extern bool accel_event;
 extern bool sos_event;
+extern bool GPS_data_ready;
 
 void init_GPIO();
 void init_PPS(void);
