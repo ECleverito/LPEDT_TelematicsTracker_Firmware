@@ -34,8 +34,6 @@ void init_GPIO()
   NVIC_EnableIRQ(GPIO_EVEN_IRQn);
   NVIC_EnableIRQ(GPIO_ODD_IRQn);
 
-  GPIO_PinModeSet(GPS_TX_RDY_PORT, GPS_TX_RDY_PIN, gpioModeInput, 0);
-
 }
 
 void init_PPS(void)
