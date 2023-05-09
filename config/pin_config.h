@@ -98,13 +98,13 @@
 #define USART0_RTS_PORT                          gpioPortA
 #define USART0_RTS_PIN                           0
 
-// USART0 RX on PA05
-#define USART0_RX_PORT                           gpioPortA
-#define USART0_RX_PIN                            5
+// USART0 RX on PC04
+#define USART0_RX_PORT                           gpioPortC
+#define USART0_RX_PIN                            4
 
-// USART0 TX on PA04
-#define USART0_TX_PORT                           gpioPortA
-#define USART0_TX_PIN                            4
+// USART0 TX on PC05
+#define USART0_TX_PORT                           gpioPortC
+#define USART0_TX_PIN                            5
 
 // [USART0]$
 

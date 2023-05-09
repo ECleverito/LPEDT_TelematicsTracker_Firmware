@@ -446,13 +446,13 @@ gps_return_t gps_enable_periodic_updates(){
 }
 
 void print_nav_pvt_info(uint8_t* nav_pvt_data) {
-    uint16_t year = (uint16_t)(nav_pvt_data[10] | (nav_pvt_data[11] << 8));
-    uint8_t month = nav_pvt_data[12];
-    uint8_t day = nav_pvt_data[13];
-    uint8_t hour = nav_pvt_data[14];
-    uint8_t min = nav_pvt_data[15];
-    uint8_t sec = nav_pvt_data[16];
-    uint8_t fixType = nav_pvt_data[26];
+    //uint16_t year = (uint16_t)(nav_pvt_data[10] | (nav_pvt_data[11] << 8));
+    //uint8_t month = nav_pvt_data[12];
+    //uint8_t day = nav_pvt_data[13];
+    //uint8_t hour = nav_pvt_data[14];
+    //uint8_t min = nav_pvt_data[15];
+    //uint8_t sec = nav_pvt_data[16];
+    //uint8_t fixType = nav_pvt_data[26];
     int32_t lon_raw = (int32_t)(nav_pvt_data[30] | (nav_pvt_data[31] << 8) |
                                 (nav_pvt_data[32] << 16) | (nav_pvt_data[33] << 24));
     int32_t lat_raw = (int32_t)(nav_pvt_data[34] | (nav_pvt_data[35] << 8) |
@@ -462,11 +462,15 @@ void print_nav_pvt_info(uint8_t* nav_pvt_data) {
     uint32_t gSpeed = ((uint32_t)nav_pvt_data[66] | ((uint32_t)nav_pvt_data[67] << 8) |
                                 ((uint32_t)nav_pvt_data[68] << 16) | ((uint32_t)nav_pvt_data[69] << 24));
     float gSpeed_mph = ((float)gSpeed) * MMS_TO_MPH_SCALE_FACTOR;
-    sl_iostream_printf(app_log_iostream, "Date/Time: %04d-%02d-%02d %02d:%02d:%02d. ", year, month, day, hour, min, sec);
-    sl_iostream_printf(app_log_iostream,"Fix Type: %d. ", fixType);
-    sl_iostream_printf(app_log_iostream,"Longitude: %.7f degrees. ", lon);
-    sl_iostream_printf(app_log_iostream,"Latitude: %.7f degrees. ", lat);
-    sl_iostream_printf(app_log_iostream,"Ground Speed: %.2f mph.\n\r", gSpeed_mph);
+    //sl_iostream_printf(app_log_iostream, "Date/Time: %04d-%02d-%02d %02d:%02d:%02d. ", year, month, day, hour, min, sec);
+    //sl_iostream_printf(app_log_iostream,"Fix Type: %d. ", fixType);
+    //sl_iostream_printf(app_log_iostream,"Longitude: %.7f degrees. ", lon);
+    //sl_iostream_printf(app_log_iostream,"Latitude: %.7f degrees. ", lat);
+    //sl_iostream_printf(app_log_iostream,"Ground Speed: %.2f mph.\n\r", gSpeed_mph);
+
+    //HTTP POST from XBee
+    sl_iostream_printf(app_log_iostream, "POST /gps?latitude=%.7f&longitude=%.7f&speed=%.1f HTTP/1.1\r\nHost: teletracker.herokuapp.com\r\n\r\n", lat, lon, gSpeed_mph);
+    //sl_iostream_printf(app_log_iostream, "GET /home HTTP/1.1\r\nHost: teletracker.herokuapp.com\r\n\r\n");
 }
 
 
