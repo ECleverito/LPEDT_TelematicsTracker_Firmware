@@ -19,6 +19,7 @@
 #include "src/I2C.h"
 #include "src/adxl343.h"
 #include "src/sam-m8q.h"
+#include "sl_iostream.h"
 
 #include "em_common.h"
 #include "sl_power_manager.h"
@@ -56,7 +57,11 @@ void app_init(void)
 
   ADXL_read_flag = false;
 
+  //gps_readPortConfig();
+
   gps_enable_periodic_updates();
+
+  sl_iostream_printf(app_log_iostream,"MG Booting\r\n");
 
 }
 
@@ -65,52 +70,7 @@ void app_init(void)
  ******************************************************************************/
 void app_process_action(void)
 {
-  /*
-  bool ADXL_readRes = false;
-  uint8_t ADXL_accelVals[6];
-  uint8_t pwrCtl;
-  uint8_t bwRate;
-  static int successfulADXLReads = 0;
 
-  if(ADXL_read_flag)
-    {
-      ADXL_readRes = adxl_read(DATAX0_REG,ADXL_accelVals,6);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 measurements: \r\n");
-          LOG_INFO("\tX0 - %d\r\n",ADXL_accelVals[0]);
-          LOG_INFO("\tX1 - %d\r\n",ADXL_accelVals[1]);
-          LOG_INFO("\tY0 - %d\r\n",ADXL_accelVals[2]);
-          LOG_INFO("\tY1 - %d\r\n",ADXL_accelVals[3]);
-          LOG_INFO("\tZ0 - %d\r\n",ADXL_accelVals[4]);
-          LOG_INFO("\tZ1 - %d\r\n",ADXL_accelVals[5]);
-        }
-
-      ADXL_readRes = adxl_read(PWR_CTL_REG,&pwrCtl,1);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 Power Ctl: %d\r\n",pwrCtl);
-        }
-
-      ADXL_readRes = adxl_read(BW_RATE_REG,&bwRate,1);
-      if(ADXL_readRes)
-        {
-          LOG_INFO("ADXL343 BW Rate: %d\r\n",bwRate);
-        }
-
-      if(ADXL_readRes)
-        {
-          successfulADXLReads++;
-        }
-      ADXL_read_flag = false;
-    }
-*/
-
-//  if(gps_read_flag_get())
-//      {
-//        gps_readPortConfig();
-//        gps_read_flag_set(false);
-//      }
 while(1){
     memset((uint8_t*) frame_buffer, 0, 128);
 

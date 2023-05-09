@@ -2,18 +2,30 @@
 <device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFR32MG24B210F1536IM48" partId="mcu.arm.efr32.mg24.efr32mg24b210f1536im48" contextId="com.silabs.sdk.stack.super:4.2.2._1996006866">
   <mode name="DefaultMode">
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="EUSART1" propertyId="ABModule.selectedRequirement" value="eusart%T%SL_IOSTREAM_EUSART_XBEE_EUSART%T%sl_iostream_eusart_xbee_eusart_config.h"/>
+    <property object="EUSART1" propertyId="ABPeripheral.included" value="true"/>
     <property object="GPIO" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_DEBUG%T%sl_debug_swo_config.h"/>
     <property object="GPIO" propertyId="ABPeripheral.included" value="true"/>
     <property object="PA04" propertyId="pin.name" value=""/>
     <property object="PA05" propertyId="pin.name" value=""/>
     <property object="PB00" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_VCOM%T%sl_board_control_config.h"/>
     <property object="PB00" propertyId="pin.reserve" value="Reserved"/>
-    <property object="PC04" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_MX25_FLASH_SHUTDOWN_CS%T%sl_mx25_flash_shutdown_eusart_config.h"/>
-    <property object="PC04" propertyId="pin.reserve" value="Reserved"/>
+    <property object="PB03" propertyId="pin.name" value=""/>
+    <property object="PB04" propertyId="pin.name" value=""/>
+    <property object="PC04" propertyId="pin.name" value=""/>
+    <property object="PC05" propertyId="pin.name" value=""/>
+    <property object="PC06" propertyId="pin.name" value=""/>
+    <property object="PC07" propertyId="pin.name" value=""/>
     <property object="PC09" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_DISPLAY%T%sl_board_control_config.h"/>
     <property object="PC09" propertyId="pin.reserve" value="Reserved"/>
     <property object="PD03" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_SENSOR_RHT%T%sl_board_control_config.h"/>
     <property object="PD03" propertyId="pin.reserve" value="Reserved"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.cs" value="20"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.cts" value="39"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.rts" value="38"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.rx" value="36"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.sclk" value="19"/>
+    <property object="PORTIO" propertyId="portio.eusart1.location.tx" value="37"/>
     <property object="PORTIO" propertyId="portio.gpio.enable.swv" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.usart0.enable.cts" value="Enabled"/>
     <property object="PORTIO" propertyId="portio.usart0.enable.rts" value="Enabled"/>

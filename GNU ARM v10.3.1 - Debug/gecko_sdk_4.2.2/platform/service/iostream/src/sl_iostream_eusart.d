@@ -1,7 +1,12 @@
-app.o: ../app.c \
+gecko_sdk_4.2.2/platform/service/iostream/src/sl_iostream_eusart.o: \
+ C:/Users/nikpr/SimplicityStudio/SDKs/gecko_sdk/platform/service/iostream/src/sl_iostream_eusart.c \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h \
- ../src/GPIO.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
+ C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\cmsis\core\include\core_cm33.h \
@@ -54,40 +59,41 @@ app.o: ../app.c \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/emlib_core_debug_config.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h \
- ../src/timers.h ../src/I2C.h ../src/adxl343.h ../src/sam-m8q.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_sleeptimer_config.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
- ../app.h ../src/log.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_iostream_handles.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_iostream_init_usart_instances.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h \
- c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h \
  c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h \
  C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/dmadrv_config.h \
- C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/app_log_config.h
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h \
+ C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
+ C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/emlib_core_debug_config.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h \
+ C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_sleeptimer_config.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sli_iostream_uart.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_eusart.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\sli_em_cmu.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h \
+ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_atomic.h
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\toolchain\inc\sl_gcc_preinclude.h:
-../src/GPIO.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
+C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\em_device.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24b210f1536im48.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\cmsis\core\include\core_cm33.h:
@@ -140,38 +146,31 @@ c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_prs_signals.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_dma_descriptor.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32mg24\include\efr32mg24_ldmaxbar_defines.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/emlib_core_debug_config.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_enum.h:
-../src/timers.h:
-../src/I2C.h:
-../src/adxl343.h:
-../src/sam-m8q.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_status.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_common.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_slist.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_sleeptimer_config.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
-../app.h:
-../src/log.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\app\common\util\app_log\app_log.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_iostream_handles.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_iostream_init_usart_instances.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\autogen/sl_component_catalog.h:
-c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emdrv\dmadrv\inc\dmadrv.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emdrv\common\inc\ecode.h:
 c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_ldma.h:
 C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/dmadrv_config.h:
-C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/app_log_config.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\power_manager\inc\sl_power_manager.h:
+C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_power_manager_config.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_common.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
+C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/emlib_core_debug_config.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\sleeptimer\inc\sl_sleeptimer.h:
+C:\Users\nikpr\SimplicityStudio\v5_workspace\LPEDT_TelematicsTracker_Firmware\config/sl_sleeptimer_config.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_emu.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_bus.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_assert.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_core.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sli_iostream_uart.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_uart.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\service\iostream\inc\sl_iostream_eusart.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_cmu_compat.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\sli_em_cmu.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_gpio.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\emlib\inc\em_eusart_compat.h:
+c:\users\nikpr\simplicitystudio\sdks\gecko_sdk\platform\common\inc\sl_atomic.h:

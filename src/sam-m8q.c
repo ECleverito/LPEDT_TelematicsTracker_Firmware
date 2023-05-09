@@ -183,21 +183,71 @@ gps_return_t gps_read_pending_data(uint8_t* buffer, uint16_t max_len){
 //A function to read the SAM-M8Q's Port Configuration.
 gps_return_t gps_readPortConfig()
 {
-  gps_return_t response;
-  uint8_t transferData[] = {CFG_PRT_GET_MESSAGE};
-  uint8_t response_buffer[ACK_RESPONSE_TOTAL_LENGTH+CFG_PRT_RESPONSE_TOTAL_LENGTH];
+//  gps_return_t response;
+//  uint8_t transferData[] = {CFG_PRT_GET_MESSAGE};
+//  uint8_t response_buffer[ACK_RESPONSE_TOTAL_LENGTH+CFG_PRT_RESPONSE_TOTAL_LENGTH];
+//
+//  I2C_TransferSeq_TypeDef seq;
+//
+//  seq.addr = SAMM8Q_I2C_7BIT_ADDR;
+//  seq.flags = I2C_FLAG_WRITE_WRITE;
+//  uint8_t data_stream_addr = SAMM8Q_DATA_STREAM_ADDR;
+//  seq.buf[0].data = & data_stream_addr;
+//  seq.buf[0].len = 1;
+//  seq.buf[1].data = (uint8_t*)transferData;
+//  seq.buf[1].len = CFG_PRT_GET_TOTAL_LENGTH;
+//
+//  I2C_TransferReturn_TypeDef ret;
+//
+//  ret = I2C_TransferInit(I2C1,&seq);
+//
+//  while(ret==i2cTransferInProgress)
+//    {
+//      ret = I2C_Transfer(I2C1);
+//    }
+//
+//  if(ret!=i2cTransferDone) return gps_failed;
 
   I2C_TransferSeq_TypeDef seq;
+  I2C_TransferReturn_TypeDef ret;
+  uint8_t frame_buffer[128];
+  gps_ubx_frame_t ubx_frame;
+
+  uint16_t payload_len = 0;
+  uint8_t payload[] = {
+  };
+
+  ubx_frame.preamble_a      = SAMM8Q_PREAMBLE_A;
+  ubx_frame.preamble_b      = SAMM8Q_PREAMBLE_B;
+  ubx_frame.class           = UBX_CLASS_CFG;
+  ubx_frame.id              = UBX_ID_CFG_NAV5;
+  ubx_frame.payload_length  = payload_len;
+  ubx_frame.payload         = (uint8_t*) payload;
+
+  gps_generate_checksum(&ubx_frame);
+
+  gps_generate_ubx_frame_buffer((uint8_t*) frame_buffer, 128, &ubx_frame);
 
   seq.addr = SAMM8Q_I2C_7BIT_ADDR;
   seq.flags = I2C_FLAG_WRITE_WRITE;
   uint8_t data_stream_addr = SAMM8Q_DATA_STREAM_ADDR;
-  seq.buf[0].data = & data_stream_addr;
+  seq.buf[0].data = &data_stream_addr;
   seq.buf[0].len = 1;
-  seq.buf[1].data = (uint8_t*)transferData;
-  seq.buf[1].len = CFG_PRT_GET_TOTAL_LENGTH;
+  seq.buf[1].data = (uint8_t*)frame_buffer;
+  seq.buf[1].len = ubx_frame.payload_length+8;
 
-  I2C_TransferReturn_TypeDef ret;
+  ret = I2C_TransferInit(I2C1,&seq);
+
+  while(ret==i2cTransferInProgress)
+  {
+    ret = I2C_Transfer(I2C1);
+  }
+
+  if(ret!=i2cTransferDone) return gps_failed;
+
+  seq.flags = I2C_FLAG_READ;
+  seq.buf[0].data = (uint8_t*)frame_buffer;
+  seq.buf[0].len = 36+8;
 
   ret = I2C_TransferInit(I2C1,&seq);
 
@@ -208,38 +258,19 @@ gps_return_t gps_readPortConfig()
 
   if(ret!=i2cTransferDone) return gps_failed;
 
+  seq.flags = I2C_FLAG_READ;
+  seq.buf[0].data = (uint8_t*)frame_buffer;
+  seq.buf[0].len = ACK_RESPONSE_TOTAL_LENGTH;
 
-  //Wait for data to be ready
-  while ((response = gps_read_pending_data((uint8_t*) response_buffer, ACK_RESPONSE_TOTAL_LENGTH+CFG_PRT_RESPONSE_TOTAL_LENGTH)) != gps_success){
-      if (response == gps_failed) return gps_failed;
-  }
+  ret = I2C_TransferInit(I2C1,&seq);
 
-//  seq.flags = I2C_FLAG_READ;
-//  seq.buf[0].data = (uint8_t*)port_response_buffer;
-//  seq.buf[0].len = CFG_PRT_RESPONSE_TOTAL_LENGTH;
-//
-//
-//  ret = I2C_TransferInit(I2C1,&seq);
-//
-//  while(ret==i2cTransferInProgress)
-//    {
-//      ret = I2C_Transfer(I2C1);
-//    }
-//
-//  if(ret!=i2cTransferDone) return gps_failed;
-//
-//  seq.flags = I2C_FLAG_READ;
-//    seq.buf[0].data = (uint8_t*)ack_response_buffer;
-//    seq.buf[0].len = ACK_RESPONSE_TOTAL_LENGTH;
-//
-//  ret = I2C_TransferInit(I2C1,&seq);
-//
-//  while(ret==i2cTransferInProgress)
-//    {
-//      ret = I2C_Transfer(I2C1);
-//    }
-//
-//  if(ret!=i2cTransferDone) return gps_failed;
+  while(ret==i2cTransferInProgress)
+    {
+      ret = I2C_Transfer(I2C1);
+    }
+
+  if(ret!=i2cTransferDone) return gps_failed;
+
   return gps_success;
 }
 
@@ -247,21 +278,31 @@ gps_return_t gps_readPortConfig()
 gps_return_t gps_enable_periodic_updates(){
   I2C_TransferSeq_TypeDef seq;
   I2C_TransferReturn_TypeDef ret;
-  uint8_t payload[] = {
-      (uint8_t) UBX_CLASS_NAV,       // Navigation message class (NAV)
-      (uint8_t) UBX_ID_NAV_PVT,      // Navigation message ID (NAV-PVT)
-      0x01, // Enable message at 1 Hz
+  uint8_t frame_buffer[128];
+  gps_ubx_frame_t ubx_frame;
+
+
+  // CONFIGURE PORT
+
+  uint16_t cfg_prt_payload_len = 20;
+  uint8_t cfg_prt_payload[] = {
+      0x00,                         // Port ID
+      0x00,                         // Reserved x1
+      0x9B, 0x00,                   // TX Ready Config Flags
+      0x84, 0x00, 0x00, 0x00,       // Mode Config Flags
+      0x00, 0x00, 0x00, 0x00,       // Reserved x4
+      0x07, 0x00,                   // InProtoMask
+      0x03, 0x00,                   // OutProtoMask
+      0x00, 0x00,                   // Flags
+      0x00, 0x00                    // Reserved x2
   };
 
-  uint8_t frame_buffer[128];
-
-  gps_ubx_frame_t ubx_frame;
   ubx_frame.preamble_a      = SAMM8Q_PREAMBLE_A;
-  ubx_frame.preamble_b 			= SAMM8Q_PREAMBLE_B;
-  ubx_frame.class      			= UBX_CLASS_CFG;
-  ubx_frame.id              = UBX_ID_CFG_MSG;
-  ubx_frame.payload_length  = 3;
-  ubx_frame.payload         = (uint8_t*) payload;
+  ubx_frame.preamble_b      = SAMM8Q_PREAMBLE_B;
+  ubx_frame.class           = UBX_CLASS_CFG;
+  ubx_frame.id              = UBX_ID_CFG_PRT;
+  ubx_frame.payload_length  = cfg_prt_payload_len;
+  ubx_frame.payload         = (uint8_t*) cfg_prt_payload;
 
   gps_generate_checksum(&ubx_frame);
 
@@ -278,13 +319,130 @@ gps_return_t gps_enable_periodic_updates(){
   ret = I2C_TransferInit(I2C1,&seq);
 
   while(ret==i2cTransferInProgress)
+   {
+     ret = I2C_Transfer(I2C1);
+   }
+
+  if(ret!=i2cTransferDone) return gps_failed;
+
+
+    //CONFIGURE NAVIGATION ENGINE
+
+    uint16_t cfg_nav5_payload_len = 36;
+    uint8_t cfg_nav5_payload[] = {
+        0x41, 0x00,                    //mask (apply static hold & dyn model settings)
+        0x04,        									 //dynModel (0x04 = Automotive Mode)
+        0x03,        									 //fixMode
+        0x00, 0x00, 0x00, 0x00,        //FixedAlt
+        0x10, 0x27, 0x00, 0x00,        //fixedAltVar
+        0x05,        									 //minElev
+        0x00,        									 //drLimit
+        0xfa, 0x00,         					 //pDop
+        0xfa, 0x00,         					 //tDop
+        0x64, 0x00,         					 //pAcc
+        0x5e, 0x01,                    //tAcc
+        0x2D,        									 //staticHoldThresh (0x2D = 45 cm/s)
+        0x3c,        									 //dgnssTimeout
+        0x00,        									 //cnoThreshNumSVs
+        0x00,        									 //cnoThresh
+        0x00, 0x00,        						 //reserved
+        0x0A, 0x00,        						 //staticHoldMaxDist (0x0A = 10 m)
+        0x00,                          //utcStandard
+        0x00, 0x00, 0x00, 0x00, 0x00   //reserved
+    };
+
+    ubx_frame.class           = UBX_CLASS_CFG;
+    ubx_frame.id              = UBX_ID_CFG_NAV5;
+    ubx_frame.payload_length  = cfg_nav5_payload_len;
+    ubx_frame.payload         = (uint8_t*) cfg_nav5_payload;
+
+    gps_generate_checksum(&ubx_frame);
+
+    gps_generate_ubx_frame_buffer((uint8_t*) frame_buffer, 128, &ubx_frame);
+
+    seq.addr = SAMM8Q_I2C_7BIT_ADDR;
+    seq.flags = I2C_FLAG_WRITE;
+    seq.buf[0].data = (uint8_t*)frame_buffer;
+    seq.buf[0].len = ubx_frame.payload_length+8;
+
+    ret = I2C_TransferInit(I2C1,&seq);
+
+    while(ret==i2cTransferInProgress)
     {
       ret = I2C_Transfer(I2C1);
     }
 
-  if(ret!=i2cTransferDone) return gps_failed;
+    if(ret!=i2cTransferDone) return gps_failed;
 
-  return gps_success;
+
+    //CONFIGURE POWER MANAGEMENT SYSTEM
+
+    uint16_t cfg_pms_payload_len = 8;
+    uint8_t cfg_pms_payload[] = {
+       0x00,        //Version
+       0x03,        //Power Setup Value (0x03 = Agressive Power Saver 1 Hz)
+       0x00, 0x00,  //Period
+       0x00, 0x00,  //onTime
+       0x00, 0x00   //Reserved 2x
+    };
+
+    ubx_frame.class           = UBX_CLASS_CFG;
+    ubx_frame.id              = UBX_ID_CFG_PMS;
+    ubx_frame.payload_length  = cfg_pms_payload_len;
+    ubx_frame.payload         = (uint8_t*) cfg_pms_payload;
+
+    gps_generate_checksum(&ubx_frame);
+
+    gps_generate_ubx_frame_buffer((uint8_t*) frame_buffer, 128, &ubx_frame);
+
+    seq.addr = SAMM8Q_I2C_7BIT_ADDR;
+    seq.flags = I2C_FLAG_WRITE;
+    seq.buf[0].data = (uint8_t*)frame_buffer;
+    seq.buf[0].len = ubx_frame.payload_length+8;
+
+    ret = I2C_TransferInit(I2C1,&seq);
+
+    while(ret==i2cTransferInProgress)
+     {
+       ret = I2C_Transfer(I2C1);
+     }
+
+    if(ret!=i2cTransferDone) return gps_failed;
+
+
+   //CONFIGURE OUTPUT DATA & RATE
+
+    uint16_t cfg_msg_payload_len = 3;
+    uint8_t cfg_msg_payload[] = {
+      (uint8_t) UBX_CLASS_NAV,       // Navigation message class (NAV)
+      (uint8_t) UBX_ID_NAV_PVT,      // Navigation message ID (NAV-PVT)
+      0x05, // Enable message at .2 Hz
+    };
+
+    ubx_frame.class      			= UBX_CLASS_CFG;
+    ubx_frame.id              = UBX_ID_CFG_MSG;
+    ubx_frame.payload_length  = cfg_msg_payload_len;
+    ubx_frame.payload         = (uint8_t*) cfg_msg_payload;
+
+    gps_generate_checksum(&ubx_frame);
+
+    gps_generate_ubx_frame_buffer((uint8_t*) frame_buffer, 128, &ubx_frame);
+
+    seq.addr = SAMM8Q_I2C_7BIT_ADDR;
+    seq.flags = I2C_FLAG_WRITE;
+    seq.buf[0].data = (uint8_t*)frame_buffer;
+    seq.buf[0].len = ubx_frame.payload_length+8;
+
+    ret = I2C_TransferInit(I2C1,&seq);
+
+    while(ret==i2cTransferInProgress)
+    {
+      ret = I2C_Transfer(I2C1);
+    }
+
+    if(ret!=i2cTransferDone) return gps_failed;
+
+    return gps_success;
 }
 
 void print_nav_pvt_info(uint8_t* nav_pvt_data) {
@@ -304,11 +462,11 @@ void print_nav_pvt_info(uint8_t* nav_pvt_data) {
     uint32_t gSpeed = ((uint32_t)nav_pvt_data[66] | ((uint32_t)nav_pvt_data[67] << 8) |
                                 ((uint32_t)nav_pvt_data[68] << 16) | ((uint32_t)nav_pvt_data[69] << 24));
     float gSpeed_mph = ((float)gSpeed) * MMS_TO_MPH_SCALE_FACTOR;
-    sl_iostream_printf(app_log_iostream, "Date/Time: %04d-%02d-%02d %02d:%02d:%02d\n\r", year, month, day, hour, min, sec);
-    sl_iostream_printf(app_log_iostream,"Fix Type: %d\n\r", fixType);
-    sl_iostream_printf(app_log_iostream,"Longitude: %.7f degrees\n\r", lon);
-    sl_iostream_printf(app_log_iostream,"Latitude: %.7f degrees\n\r", lat);
-    sl_iostream_printf(app_log_iostream,"Ground Speed: %.2f mph\n\n\r", gSpeed_mph);
+    sl_iostream_printf(app_log_iostream, "Date/Time: %04d-%02d-%02d %02d:%02d:%02d. ", year, month, day, hour, min, sec);
+    sl_iostream_printf(app_log_iostream,"Fix Type: %d. ", fixType);
+    sl_iostream_printf(app_log_iostream,"Longitude: %.7f degrees. ", lon);
+    sl_iostream_printf(app_log_iostream,"Latitude: %.7f degrees. ", lat);
+    sl_iostream_printf(app_log_iostream,"Ground Speed: %.2f mph.\n\r", gSpeed_mph);
 }
 
 
