@@ -61,8 +61,6 @@ void app_init(void)
 
   gps_enable_periodic_updates();
 
-  sl_iostream_printf(app_log_iostream,"MG Booting\r\n");
-
 }
 
 /***************************************************************************//**

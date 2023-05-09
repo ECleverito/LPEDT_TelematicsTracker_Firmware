@@ -22,6 +22,8 @@
 #define LAT_SCALE_FACTOR          1e-7
 #define MMS_TO_MPH_SCALE_FACTOR   0.000621371
 
+static bool first_read = true;
+
 //Flag to indicate that GPS data should be read.
 static bool GPS_read_flag = false;
 
@@ -416,7 +418,7 @@ gps_return_t gps_enable_periodic_updates(){
     uint8_t cfg_msg_payload[] = {
       (uint8_t) UBX_CLASS_NAV,       // Navigation message class (NAV)
       (uint8_t) UBX_ID_NAV_PVT,      // Navigation message ID (NAV-PVT)
-      0x05, // Enable message at .2 Hz
+      0x0A, // Enable message at .2 Hz
     };
 
     ubx_frame.class      			= UBX_CLASS_CFG;
@@ -469,6 +471,12 @@ void print_nav_pvt_info(uint8_t* nav_pvt_data) {
     //sl_iostream_printf(app_log_iostream,"Ground Speed: %.2f mph.\n\r", gSpeed_mph);
 
     //HTTP POST from XBee
+    if(first_read){
+        first_read = false;
+        for(int i = 0; i < 200; i++){
+            sl_udelay_wait(100000);
+        }
+    }
     sl_iostream_printf(app_log_iostream, "POST /gps?latitude=%.7f&longitude=%.7f&speed=%.1f HTTP/1.1\r\nHost: teletracker.herokuapp.com\r\n\r\n", lat, lon, gSpeed_mph);
     //sl_iostream_printf(app_log_iostream, "GET /home HTTP/1.1\r\nHost: teletracker.herokuapp.com\r\n\r\n");
 }
