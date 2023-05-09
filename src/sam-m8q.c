@@ -380,7 +380,7 @@ gps_return_t gps_enable_periodic_updates(){
     uint16_t cfg_pms_payload_len = 8;
     uint8_t cfg_pms_payload[] = {
        0x00,        //Version
-       0x03,        //Power Setup Value (0x03 = Agressive Power Saver 1 Hz)
+       0x00,        //Power Setup Value (0x03 = Agressive Power Saver 1 Hz)
        0x00, 0x00,  //Period
        0x00, 0x00,  //onTime
        0x00, 0x00   //Reserved 2x

@@ -42,6 +42,8 @@ bool accel_event;
 bool sos_event;
 bool GPS_data_ready;
 
+bool firstMsg;
+
 static uint8_t frame_buffer[128];
 
 void app_init(void)
@@ -69,11 +71,10 @@ void app_init(void)
   //gps_readPortConfig();
 
   GPS_data_ready=false;
+  memset(frame_buffer,0,128);
   gps_enable_periodic_updates();
 
-  sl_iostream_printf(app_log_iostream,"MG Booting\r\n");
-  sl_udelay_wait(20000000);
-
+  firstMsg = true;
 }
 
 /***************************************************************************//**
@@ -101,6 +102,12 @@ void app_process_action(void)
   gps_return_t GPS_readRes;
   if(GPS_data_ready)
     {
+
+//      if(firstMsg)
+//        {
+//          sl_udelay_wait(20000000);
+//          firstMsg=false;
+//        }
       GPS_data_ready=false;
 
       GPS_readRes = gps_read_pending_data(frame_buffer,128);
@@ -113,7 +120,7 @@ void app_process_action(void)
           print_nav_pvt_info((uint8_t*)frame_buffer);
         }
 
-
+      memset(frame_buffer,0,128);
     }
 
 }
