@@ -8,7 +8,7 @@
 #ifndef SRC_IRQ_H_
 #define SRC_IRQ_H_
 
-
-
+void accel_event_callback();
+void sos_event_callback();
 
 #endif /* SRC_IRQ_H_ */

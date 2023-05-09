@@ -38,7 +38,8 @@
  * Initialize application.
  ******************************************************************************/
 
-bool ADXL_read_flag;
+bool accel_event;
+bool sos_event;
 
 static uint8_t frame_buffer[128];
 
@@ -47,15 +48,22 @@ void app_init(void)
 
   //sl_power_manager_add_em_requirement(SL_POWER_MANAGER_EM1);
 
+  accel_event=false;
+  sos_event=false;
+  init_GPIO();
   init_PPS();
   PPS_on();
+
   init_timer0();
-  //init_I2C0();
+  init_I2C0();
   init_I2C1();
 
-  //adxl_init();
+  adxl_config();
+  adxl_init();
 
-  ADXL_read_flag = false;
+  uint8_t intSrc;
+  //Clear interrupt flag on ADXL
+  adxl_read(INT_SRC_REG,&intSrc,1);
 
   //gps_readPortConfig();
 
@@ -71,18 +79,20 @@ void app_init(void)
 void app_process_action(void)
 {
 
-while(1){
-    memset((uint8_t*) frame_buffer, 0, 128);
+  if(accel_event)
+    {
+      accel_event=false;
 
-    //Wait for data to be ready
-    while (gps_read_pending_data((uint8_t*) frame_buffer, 128) == gps_read_no_data){
+      uint8_t intSrc;
+      //Clear interrupt flag on ADXL
+      adxl_read(INT_SRC_REG,&intSrc,1);
 
-      }
+      adxl_getAccelEvent();
+    }
 
-    if(frame_buffer[0] == 0xB5 && frame_buffer[1] == 0x62 && frame_buffer[2] == UBX_CLASS_NAV && frame_buffer[3] == UBX_ID_NAV_PVT)
-      print_nav_pvt_info((uint8_t*)frame_buffer);
-}
-
-
+  if(sos_event)
+    {
+      sos_event=false;
+    }
 
 }
