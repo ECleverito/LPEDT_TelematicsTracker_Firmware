@@ -1,0 +1,42 @@
+//Create GPS Table
+CREATE TABLE IF NOT EXISTS gps(
+    timestamp_ TIMESTAMPTZ DEFAULT NOW(),
+    latitude float4,
+    longitude float4,
+    speed float4
+);
+
+//Create Acceleration Log Table
+CREATE TABLE IF NOT EXISTS accel(
+    timestamp_ TIMESTAMPTZ DEFAULT NOW(),
+    x_accel float4,
+    y_accel float4,
+    event_ varchar(20)
+);
+
+
+//Create SOS Log Table
+CREATE TABLE IF NOT EXISTS sos(
+    timestamp_ TIMESTAMPTZ DEFAULT NOW(),
+    event_ varchar(10)
+);
+
+
+//Insert a new gps reading
+INSERT INTO gps(latitude, longitude, speed) VALUES (1.2345, 1.2345, 1.2345);
+
+//Insert a new acceleration reading
+INSERT INTO accel(x_accel, y_accel, event_) VALUES (1.2345, 1.2345, 'Harsh Acceleration');
+
+//Insert a new SOS event
+INSERT INTO sos(event_) VALUES ('SOS');
+
+
+//Retrieve most recent gps entry
+SELECT * FROM gps ORDER BY timestamp_ DESC LIMIT 1;
+
+//Retrieve most recent acceleration entries
+SELECT * FROM accel ORDER BY timestamp_ DESC LIMIT 5;
+
+//Retrieve most recent SOS entries
+SELECT * FROM sos ORDER BY timestamp_ DESC LIMIT 2;
